@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingreso</title>
+  </head>
+  <body>
+    <header>
+      <h1>Convocatoria Autoridades de Mesa</h1>
+      <p>
+        En este portal podrás postularte como autoridad de mesa y consultar las
+        charlas informativas disponibles
+      </p>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="/index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="./postulacion.html">Postulate</a>
+          </li>
+          <li>
+            <a href="./ingreso.html">Ingresar</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Ingreso</h2>
+      <p>Si sos administrador podrás ingresar aqui.</p>
+      <form action="./result.html" method="get" target="_blank">
+        <!-- estos atributos del form los podemos cambiar con la funcionalidad que queramos,
+             pero por ahora le pongo asi porque no hace nada con los datos que va a ingresar
+              el administrador -->
+        <fieldset>
+          <label for="email">
+            E-mail:
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="nombre@gmail.com"
+              required
+            />
+          </label>
+
+          <label for="contraseña">
+            Contraseña
+            <input id="contraseña" type="password" name="contraseña" required />
+          </label>
+
+          <button type="submit">Ingresar</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <!-- pie de pagina -->
+      <h2>Sitio Perteneciente al ente Nacional</h2>
+      <p>Muestra ilustrativa no oficial.</p>
+    </footer>
+  </body>
+</html>
