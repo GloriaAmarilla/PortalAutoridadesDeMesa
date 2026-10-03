@@ -26,34 +26,12 @@ h1 {
 
 h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 100%;
     text-align: center;
-    word-wrap: break-word;
 }
 
-/* Estilos de navegación responsivos */
-nav ul {
-    list-style-type: none; /* Quitamos las viñetas que tenía la página original por error */
-    padding: 0;
-    margin: 1.5rem 0;
-    display: flex;
-    flex-direction: column; /* Apilados verticalmente como en la página original */
-    gap: 2rem;
-    align-items: flex-start; /* Alineados a la izquierda */
-}
-
-nav ul li {
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    nav ul li {
-        width: auto;
-    }
-}
-
-/* Botones y enlaces principales */
-.postulacion-inicio, .ingresar-inicio {
+.postulacion-inicio{
+    list-style-type: none;
     border: 2px solid black;
     border-radius: 20%; /* Estilo de la página anterior */
     padding: 1rem;
@@ -71,6 +49,27 @@ nav ul li {
     width: 250px;
     height: 250px;
     margin: 0;
+}
+
+.postulacion-inicio:hover{
+    background-color: rgb(170, 12, 12);
+}
+
+.charlas-inicio{
+    list-style-type: none;
+    border: 2px solid black;
+    border-radius: 20%;
+    background-color: darkcyan;
+    padding: 5%;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+
+.charlas-inicio:hover{
+    background-color: rgb(2, 71, 71);
 }
 
 @media (min-width: 768px) {
