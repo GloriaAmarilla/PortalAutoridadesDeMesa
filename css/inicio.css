@@ -18,23 +18,91 @@ header, main, footer {
 
 h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2.5rem; /* Usamos rem para mejor escalabilidad, antes 300% */
+    font-size: 2.5rem;
     text-align: center;
-    word-wrap: break-word; /* Evita que palabras largas rompan el layout */
+    word-wrap: break-word;
     hyphens: auto;
 }
 
 h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 100%;
+    font-size: 1.5rem;
     text-align: center;
+    word-wrap: break-word;
 }
 
-.postulacion-inicio{
+/* =========================================
+   BARRA DE NAVEGACIÓN SUPERIOR (.top-nav)
+   ========================================= */
+.top-nav {
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espacio entre los grupos izquierdo y derecho */
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.top-nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.top-nav .nav-left {
+    justify-content: flex-start;
+}
+
+.top-nav .nav-right {
+    justify-content: flex-end;
+}
+
+.top-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre icono y texto si hubiera */
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.top-nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Para pantallas chicas */
+@media (max-width: 600px) {
+    .top-nav {
+        flex-direction: column;
+        padding: 0;
+    }
+    .top-nav ul {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   BOTONES PRINCIPALES (.main-actions)
+   ========================================= */
+.main-actions {
+    display: flex;
+    flex-direction: column; /* Orientación vertical (apilados) */
+    align-items: center; /* Centrados en la página */
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.postulacion-inicio {
     border: 2px solid black;
-    border-radius: 20%; /* Estilo de la página anterior */
-    padding: 1rem;
+    border-radius: 20px; /* Forma rectangular pero redondeada */
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,43 +111,18 @@ h2 {
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.2s; /* Efecto zoom in */
     
-    /* Forzamos a que sean cuadrados del mismo tamaño */
-    width: 250px;
-    height: 250px;
-    margin: 0;
+    /* Más rectangular (ancho mayor que alto) */
+    width: 320px;
+    height: 180px;
+    max-width: 90%; /* Para que no se pase en celulares muy pequeños */
+    
+    background-color: tomato;
 }
 
-.postulacion-inicio:hover{
-    background-color: rgb(170, 12, 12);
-}
-
-.charlas-inicio{
-    list-style-type: none;
-    border: 2px solid black;
-    border-radius: 20%;
-    background-color: darkcyan;
-    padding: 5%;
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 200%;
-}
-
-.charlas-inicio:hover{
-    background-color: rgb(2, 71, 71);
-}
-
-@media (min-width: 768px) {
-    .postulacion-inicio, .ingresar-inicio {
-        margin: 0;
-    }
-}
-
-.postulacion-inicio:hover, .ingresar-inicio:hover {
-    transform: scale(1.05);
+.postulacion-inicio:hover {
+    transform: scale(1.05); /* Efecto de zoom leve */
 }
 
 .postulacion-inicio h2 {
@@ -90,25 +133,6 @@ h2 {
 .postulacion-inicio p {
     margin: 0.5rem 0 0 0;
     font-size: 1.2rem;
-}
-
-.postulacion-inicio {
-    background-color: tomato;
-}
-
-.ingresar-inicio {
-    background-color: dodgerblue;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* Estilos extra para enlaces simples de nav */
-nav ul li a:not(.postulacion-inicio):not(.ingresar-inicio) {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0.5rem;
 }
 
 /* Formularios responsivos */

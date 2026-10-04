@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="../css/inicio.css">
+    <!-- Se corrige la ruta del CSS para el index -->
+    <link rel="stylesheet" href="./css/inicio.css">
   </head>
   <body>
+    <!-- Nueva Barra de Navegación Superior -->
+    <nav class="top-nav">
+      <ul class="nav-left">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="#">Información</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li>
+          <a href="./pages/ingreso.html" class="login-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            Ingresar
+          </a>
+        </li>
+      </ul>
+    </nav>
+
     <header>
       <h1>Convocatoria Autoridades de Mesa</h1>
       <p>
@@ -14,32 +34,15 @@
         charlas informativas disponibles
       </p>
 
-      <nav>
-        <ul class="menu">
-          <li id="postulacion-inicio">
-            <a class="postulacion-inicio" href="./pages/postulacion.html">
-              <h2>Postulate</h2>
-              <p>¿Quieres ser autoridad de mesa?<br>
-                ¡Presiona para postularte!
-              </p>
-            </a>
-          </li>
-          <li>
-            <a class="charlas-inicio" href="./pages/map.html">
-              <h2>Charlas Informativas</h2>
-              <p>
-                Aqui podrás consultar el listado de Charlas <br>
-                abiertas a la comunidad para<br>
-                orientarte e informarte sobre la <br>
-                Convocatoria para Autoridades de Mesa.
-              </p>
-            </a>
-          </li>
-          <li id="ingresar-inicio">
-            <a class="ingresar-inicio" href="./pages/ingreso.html">Ingresar</a>
-          </li>
-        </ul>
-      </nav>
+      <!-- Botón principal centrado -->
+      <div class="main-actions">
+        <a class="postulacion-inicio" href="./pages/postulacion.html">
+          <h2>Postulate</h2>
+          <p>¿Quieres ser autoridad de mesa?<br>
+            ¡Presiona para postularte!
+          </p>
+        </a>
+      </div>
     </header>
 
     <main>
