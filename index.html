@@ -6,6 +6,14 @@
     <title>Home</title>
     <!-- Se corrige la ruta del CSS para el index -->
     <link rel="stylesheet" href="./css/inicio.css">
+    
+    <!-- Leaflet CSS (Api requerida para utilizar el mapa en nuestra aplicacion) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     
+    <!-- Link al CSS del componente del mapa -->
+    <link rel="stylesheet" href="./css/map-styles.css">
   </head>
   <body>
     <!-- Nueva Barra de Navegación Superior -->
@@ -53,8 +61,19 @@
       </p>
       <p>Puedes asistir a todas las charlas que desees sin anotación previa.</p>
 
-      <!--Hola-->
-      <!-- acá se tiene que ver el listado de charlas y el mapa -->
+      <!-- INICIO DEL BLOQUE DEL MAPA -->
+      <div class="mapa-charlas-container">
+          <!-- Lista de tarjetas posicionadas a la izquierda -->
+          <div class="lista-charlas" id="lista-charlas">
+              <!-- Las tarjetas se generan dinámicamente desde map-script.js -->
+          </div>
+          
+          <!-- Contenedor del mapa derecha -->
+          <div class="mapa-view" id="mapa-contenedor">
+              <!-- El mapa de Leaflet se renderiza aquí -->
+          </div>
+      </div>
+      <!-- FIN DEL BLOQUE DEL MAPA -->
     </main>
 
     <footer>
@@ -62,5 +81,13 @@
       <h2>Sitio Perteneciente al ente Nacional</h2>
       <p>Muestra ilustrativa no oficial.</p>
     </footer>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     
+    <!-- Nuestros scripts (El orden es importante: primero los datos, luego la lógica) -->
+    <script src="./js/data-sedes.js"></script>
+    <script src="./js/map-script.js"></script>
   </body>
 </html>
