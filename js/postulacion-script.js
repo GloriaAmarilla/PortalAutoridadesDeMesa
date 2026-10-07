@@ -18,4 +18,5 @@ function guardarDatosPostulante(){
     const direccionActual = document.getElementById('direccion-actual');
     const telefono = document.getElementById('telefono');
     const email = document.getElementById('email');
+    const fueAutoridad = document.querySelector('input[name="fueAutoridad"]:checked');
 }

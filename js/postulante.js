@@ -1,5 +1,5 @@
 class Postulante{
-    constructor(distrito, nombre, apellido, dni, fechaDeNacimiento, direccionActual, telefono, email){
+    constructor(distrito, nombre, apellido, dni, fechaDeNacimiento, direccionActual, telefono, email, fueAutoridad){
         //Falta manejo de excepciones
         this.distrito = distrito;
         this.nombre = nombre;
@@ -9,5 +9,6 @@ class Postulante{
         this.direccionActual = direccionActual;
         this.telefono = telefono;
         this.email = email;
+        this.fueAutoridad = fueAutoridad;
     }
 }

@@ -226,3 +226,27 @@ footer h2 {
     font-size: 1.2rem;
     color: #444;
 }
+
+.pregunta-autoridad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pregunta-autoridad p {
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pregunta-autoridad label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+}
+
+.pregunta-autoridad input[type="radio"] {
+    width: auto;
+}
