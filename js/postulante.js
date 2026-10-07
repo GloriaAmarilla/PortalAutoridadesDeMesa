@@ -1,4 +1,4 @@
-class Postulante{
+export default class Postulante{
     constructor(distrito, nombre, apellido, dni, fechaDeNacimiento, direccionActual, telefono, email, fueAutoridad){
         //Falta manejo de excepciones
         this.distrito = distrito;
