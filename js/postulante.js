@@ -1,7 +1,7 @@
 export default class Postulante {
     constructor(distrito, nombre, apellido, dni, fechaDeNacimiento, direccionActual, telefono, email, fueAutoridad) {
         //Falta manejo de excepciones
-        if (distrito === "--Selecciona tu Distrito--") {
+        if (distrito === "" || distrito === "--Selecciona tu Distrito--") {
             throw new Error("No ha seleccionado un distrito");
         }
         if (nombre === "" || apellido === "") {
@@ -40,8 +40,10 @@ export default class Postulante {
     }
 
     esTelefonoValido(telefono) {
-        const regex = /^\d{3} \d{8}$/;
-        return regex.test(telefono);
+        // Permite números de 10 a 15 dígitos, con o sin espacios
+        const telefonoLimpio = telefono.replace(/\s+/g, '');
+        const regex = /^\d{10,15}$/;
+        return regex.test(telefonoLimpio);
     }
 
     fechaEsFutura(fechaDeNacimiento){
