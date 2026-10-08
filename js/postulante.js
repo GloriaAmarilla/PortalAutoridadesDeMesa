@@ -1,5 +1,18 @@
 export default class Postulante {
-    constructor(distrito, nombre, apellido, dni, fechaDeNacimiento, direccionActual, telefono, email, fueAutoridad) {
+    constructor(
+        distrito,
+        nombre,
+        apellido,
+        dni,
+        fechaDeNacimiento,
+        direccionActual,
+        telefono,
+        email,
+        fueAutoridad,
+        cumplioCapacitacion,
+        afiliadoAgrupacion,
+        agrupacion,
+    ) {
         //Falta manejo de excepciones
         if (distrito === "" || distrito === "--Selecciona tu Distrito--") {
             throw new Error("No ha seleccionado un distrito");
@@ -10,10 +23,10 @@ export default class Postulante {
         if (!this.esDniValido(dni)) {
             throw new Error("No es un DNI válido");
         }
-        if (this.fechaEsFutura(fechaDeNacimiento)){
+        if (this.fechaEsFutura(fechaDeNacimiento)) {
             throw new Error("La fecha ingresada es posterior a la fecha de hoy");
         }
-        if(this.esMenorDeDieciseis(fechaDeNacimiento)) {
+        if (this.esMenorDeDieciseis(fechaDeNacimiento)) {
             throw new Error("El postulante es menor de 16 años");
         }
         if (direccionActual === "") {
@@ -22,7 +35,7 @@ export default class Postulante {
         if (!this.esTelefonoValido(telefono)) {
             throw new Error("No es un número de teléfono válido");
         }
-        if(email === ""){
+        if (email === "") {
             throw new Error("No es un email válido");
         }
 
@@ -35,21 +48,27 @@ export default class Postulante {
         this.telefono = telefono;
         this.email = email;
         this.fueAutoridad = fueAutoridad;
+        this.cumplioCapacitacion = cumplioCapacitacion;
+        this.afiliadoAgrupacion = afiliadoAgrupacion;
+        this.agrupacion = agrupacion;
     }
 
-    esDniValido(dni){
+
+
+
+    esDniValido(dni) {
         const regex = /^\d{7,8}$/;
         return regex.test(dni);
     }
 
     esTelefonoValido(telefono) {
         // Permite números de 10 a 15 dígitos, con o sin espacios
-        const telefonoLimpio = telefono.replace(/\s+/g, '');
+        const telefonoLimpio = telefono.replace(/\s+/g, "");
         const regex = /^\d{10,15}$/;
         return regex.test(telefonoLimpio);
     }
 
-    fechaEsFutura(fechaDeNacimiento){
+    fechaEsFutura(fechaDeNacimiento) {
         const nacimiento = new Date(fechaDeNacimiento);
         const hoy = new Date();
         return nacimiento > hoy;
@@ -57,16 +76,15 @@ export default class Postulante {
 
     esMenorDeDieciseis(fechaDeNacimiento) {
         const nacimiento = new Date(fechaDeNacimiento);
-        const hoy = new Date()
+        const hoy = new Date();
 
         let edad = hoy.getFullYear() - nacimiento.getFullYear();
         const mes = hoy.getMonth() - nacimiento.getMonth();
 
-        if(mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())){
-            edad --;
+        if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+            edad--;
         }
 
         return edad < 16;
     }
 }
-

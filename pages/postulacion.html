@@ -1,121 +1,234 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postulacion</title>
+    <!-- Una nueva fuente --------------------------- -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Postulacion</title>
-  <link rel="stylesheet" href="../css/inicio.css">
-  <script type="module" src="../js/postulacion-script.js"></script>
-</head>
+    <link rel="stylesheet" href="../css/inicio.css" />
+    <script type="module" src="../js/postulacion-script.js"></script>
+  </head>
 
-<body>
-  <!-- Nueva Barra de Navegación Superior -->
-  <nav class="top-nav">
-    <ul class="nav-left">
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="./informacion.html">Información</a></li>
-    </ul>
-    <ul class="nav-right">
-      <li>
-        <a href="./ingreso.html" class="login-btn">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path
-              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-          </svg>
-          Ingresar
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <body>
+    <!-- Nueva Barra de Navegación Superior -->
+    <nav class="top-nav">
+      <ul class="nav-left">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./informacion.html">Información</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li>
+          <a href="./ingreso.html" class="login-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+              />
+            </svg>
+            Ingresar
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-  <header>
-    <h1>Convocatoria Autoridades de Mesa</h1>
-    <p>
-      En este portal podrás postularte como autoridad de mesa y consultar las
-      charlas informativas disponibles
-    </p>
-  </header>
+    <header>
+      <h1>Convocatoria Autoridades de Mesa</h1>
+      <p>
+        En este portal podrás postularte como autoridad de mesa y consultar las
+        charlas informativas disponibles
+      </p>
+    </header>
 
-  <main>
-    <h2>Postulate</h2>
-    <p>Acá podés postularte para ser autoridad de mesa.</p>
+    <main>
+      <h2>Postulate</h2>
+      <p>Acá podés postularte para ser autoridad de mesa.</p>
 
-    <form action="./result.html" method="get" target="_blank">
-      <fieldset>
-        <legend>Formulario de Postulación</legend>
-
-        <label for="distrito">
-          Distrito Electoral Correspondiente:
-          <select id="distrito" name="distrito">
-            <option value="">--Selecciona tu Distrito--</option>
-            <option value="grand-bourg">Grand Bourg</option>
-            <option value="san-miguel">San Miguel</option>
-            <option value="nogues">Nogués</option>
-            <option value="los-polvorines">Los Polvorines</option>
-            <!-- agremos mas si quieren -->
-          </select>
-        </label>
-        <label for="nombre">
-          Nombre/s:
-          <input id="nombre" name="nombre" type="text" maxlength="25" required />
-        </label>
-
-        <label for="apellido">
-          Apellido/s:
-          <input id="apellido" name="apellido" type="text" maxlength="25" required />
-        </label>
-
-        <label for="dni">
-          DNI:
-          <input id="dni" name="dni" type="text" maxlength="8" placeholder="Numeros sin espacios ni puntos" required />
-        </label>
-
-        <label for="fecha-nacimiento">
-          Fecha de Nacimiento:
-          <input id="fecha-nacimiento" name="fecha-nacimiento" type="date" required />
-        </label>
-
-        <!-- Esta forma de ingresar la direccion es provisoria, la podemos cambiar -->
-        <label for="direccion-actual">
-          Dirección Actual:
-          <input id="direccion-actual" name="direccion-actual" type="text" placeholder="Tu Calle 8888" required />
-        </label>
-
-        <label for="telefono">
-          Teléfono:
-          <input id="telefono" name="telefono" type="text" maxlength="12" placeholder="011 88889999" required />
-        </label>
-
-        <label for="email">
-          Tu e-mail:
-          <input id="email" type="email" name="email" placeholder="nombre@gmail.com" required />
-        </label>
-        
-        <div class="pregunta-autoridad">
-          <p>¿Fue Autoridad previamente?</p>
-
-          <label>
-            <input type="radio" name="fueAutoridad" value="si" required>
-            Sí
+      <form action="https://formspree.io/f/xaenojbe" method="post">
+        <fieldset>
+          <label for="distrito">
+            Distrito Electoral Correspondiente:
+            <select id="distrito" name="distrito">
+              <option value="">--Selecciona tu Distrito--</option>
+              <option value="grand-bourg">Grand Bourg</option>
+              <option value="san-miguel">San Miguel</option>
+              <option value="nogues">Nogués</option>
+              <option value="los-polvorines">Los Polvorines</option>
+              <!-- agremos mas si quieren -->
+            </select>
+          </label>
+          <label for="nombre">
+            Nombre/s:
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              maxlength="25"
+              required
+            />
           </label>
 
-          <label>
-            <input type="radio" name="fueAutoridad" value="no">
-            No
+          <label for="apellido">
+            Apellido/s:
+            <input
+              id="apellido"
+              name="apellido"
+              type="text"
+              maxlength="25"
+              required
+            />
           </label>
-        </div>
-        <button id="botonEnviar" type="submit">Enviar</button>
-      </fieldset>
-    </form>
-  </main>
 
-  <footer>
-    <!-- pie de pagina -->
-    <h2>Sitio Perteneciente al ente Nacional</h2>
-    <p>Muestra ilustrativa no oficial.</p>
-    <p>Contacto: 0800-999-MESA (6372) | Email: info@autoridadesdemesa.gob.ar</p>
-  </footer>
-</body>
+          <label for="dni">
+            DNI:
+            <input
+              id="dni"
+              name="dni"
+              type="text"
+              maxlength="8"
+              placeholder="Numeros sin espacios ni puntos"
+              required
+            />
+          </label>
 
+          <label for="fecha-nacimiento">
+            Fecha de Nacimiento:
+            <input
+              id="fecha-nacimiento"
+              name="fecha-nacimiento"
+              type="date"
+              required
+            />
+          </label>
+
+          <!-- Esta forma de ingresar la direccion es provisoria, la podemos cambiar -->
+          <label for="direccion-actual">
+            Dirección Actual:
+            <input
+              id="direccion-actual"
+              name="direccion-actual"
+              type="text"
+              placeholder="Tu Calle 8888"
+              required
+            />
+          </label>
+
+          <label for="telefono">
+            Teléfono:
+            <input
+              id="telefono"
+              name="telefono"
+              type="text"
+              maxlength="12"
+              placeholder="011 88889999"
+              required
+            />
+          </label>
+
+          <label for="email">
+            Tu e-mail:
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="nombre@gmail.com"
+              required
+            />
+          </label>
+
+          <div class="pregunta-autoridad">
+            <p>¿Fue Autoridad previamente?</p>
+
+            <label for="fueAutoridad">
+              <input
+                type="radio"
+                id="fueAutoridad"
+                name="fueAutoridad"
+                value="si"
+                required
+              />
+              Sí
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                id="fueAutoridad"
+                name="fueAutoridad"
+                value="no"
+              />
+              No
+            </label>
+          </div>
+
+          <div class="pregunta-autoridad">
+            <p>Si fue autoridad de mesa ¿Cumplió con la capacitación?</p>
+
+            <label for="cumplioCapacitacion">
+              <input
+                type="radio"
+                id="cumplioCapacitacion"
+                name="cumplioCapacitacion"
+                value="si"
+                required
+              />
+              Sí
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                id="cumplioCapacitacion"
+                name="cumplioCapacitacion"
+                value="no"
+              />
+              No
+            </label>
+          </div>
+
+          <div class="pregunta-autoridad">
+            <p>¿Está afiliado a alguna agrupación?</p>
+
+            <label for="afiliadoAgrupacion">
+              <input
+                type="radio"
+                id="afiliadoAgrupacion"
+                name="afiliadoAgrupacion"
+                value="si"
+                required
+              />
+              Sí
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                id="afiliadoAgrupacion"
+                name="afiliadoAgrupacion"
+                value="no"
+              />
+              No
+            </label>
+          </div>
+          <label for="agrupacion">
+            Agrupacion:
+            <input id="agrupacion" name="agrupacion" type="text" />
+          </label>
+          <button id="botonEnviar" type="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <!-- pie de pagina -->
+      <h2>Sitio Perteneciente al ente Nacional</h2>
+      <p>Muestra ilustrativa no oficial.</p>
+      <p>
+        Contacto: 0800-999-MESA (6372) | Email: info@autoridadesdemesa.gob.ar
+      </p>
+    </footer>
+  </body>
 </html>

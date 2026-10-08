@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+
     <!-- Se corrige la ruta del CSS para el index -->
-    <link rel="stylesheet" href="./css/inicio.css">
-    
+    <link rel="stylesheet" href="./css/inicio.css" />
+
     <!-- Leaflet CSS (Api requerida para utilizar el mapa en nuestra aplicacion) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-     
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Una nueva fuente --------------------------- -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Link al CSS del componente del mapa -->
-    <link rel="stylesheet" href="./css/map-styles.css">
+    <link rel="stylesheet" href="./css/map-styles.css" />
+    <title>Home</title>
   </head>
   <body>
     <!-- Nueva Barra de Navegación Superior -->
@@ -26,7 +36,9 @@
         <li>
           <a href="./pages/ingreso.html" class="login-btn">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+              />
             </svg>
             Ingresar
           </a>
@@ -45,7 +57,8 @@
       <div class="main-actions">
         <a class="postulacion-inicio" href="./pages/postulacion.html">
           <h2>Postulate</h2>
-          <p>¿Quieres ser autoridad de mesa?<br>
+          <p>
+            ¿Quieres ser autoridad de mesa?<br />
             ¡Presiona para postularte!
           </p>
         </a>
@@ -53,39 +66,48 @@
     </header>
 
     <main>
-      <h2>Charlas Informativas</h2>
-      <p>
-        Aqui podrás consultar el listado de Charlas abiertas a la comunidad para
-        orientarte e informarte sobre la Convocatoria para Autoridades de Mesa.
-      </p>
-      <p>Puedes asistir a todas las charlas que desees sin anotación previa.</p>
+      <section class="area-charlas">
+        <h2>Charlas Informativas</h2>
+        <p>
+          Aqui podrás consultar el listado de Charlas abiertas a la comunidad
+          para orientarte e informarte sobre la Convocatoria para Autoridades de
+          Mesa.
+        </p>
+        <p>
+          Puedes asistir a todas las charlas que desees sin anotación previa.
+        </p>
 
-      <!-- INICIO DEL BLOQUE DEL MAPA -->
-      <div class="mapa-charlas-container">
+        <!-- INICIO DEL BLOQUE DEL MAPA -->
+        <div class="mapa-charlas-container">
           <!-- Lista de tarjetas posicionadas a la izquierda -->
           <div class="lista-charlas" id="lista-charlas">
-              <!-- Las tarjetas se generan dinámicamente desde map-script.js -->
+            <!-- Las tarjetas se generan dinámicamente desde map-script.js -->
           </div>
-          
+
           <!-- Contenedor del mapa derecha -->
           <div class="mapa-view" id="mapa-contenedor">
-              <!-- El mapa de Leaflet se renderiza aquí -->
+            <!-- El mapa de Leaflet se renderiza aquí -->
           </div>
-      </div>
-      <!-- FIN DEL BLOQUE DEL MAPA -->
+        </div>
+        <!-- FIN DEL BLOQUE DEL MAPA -->
+      </section>
     </main>
 
     <footer>
       <!-- pie de pagina -->
       <h2>Sitio Perteneciente al ente Nacional</h2>
       <p>Muestra ilustrativa no oficial.</p>
-      <p>Contacto: 0800-999-MESA (6372) | Email: info@autoridadesdemesa.gob.ar</p>
+      <p>
+        Contacto: 0800-999-MESA (6372) | Email: info@autoridadesdemesa.gob.ar
+      </p>
     </footer>
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-     
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
     <!-- Nuestros scripts (El orden es importante: primero los datos, luego la lógica) -->
     <script src="./js/data-sedes.js"></script>
     <script src="./js/map-script.js"></script>
