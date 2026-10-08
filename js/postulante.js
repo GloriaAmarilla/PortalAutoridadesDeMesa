@@ -10,7 +10,10 @@ export default class Postulante {
         if (!this.esDniValido(dni)) {
             throw new Error("No es un DNI válido");
         }
-        if (this.fechaEsFutura(fechaDeNacimiento) || this.esMenorDeDieciseis(fechaDeNacimiento)) {
+        if (this.fechaEsFutura(fechaDeNacimiento)){
+            throw new Error("La fecha ingresada es posterior a la fecha de hoy");
+        }
+        if(this.esMenorDeDieciseis(fechaDeNacimiento)) {
             throw new Error("El postulante es menor de 16 años");
         }
         if (direccionActual === "") {
